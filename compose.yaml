@@ -32,6 +32,8 @@ services:
       - "127.0.0.1:3000:3000"
     volumes:
       - grafana-data:/var/lib/grafana
+      - ./monitoring/provisioning:/etc/grafana/provisioning:ro
+      - ./monitoring/dashboards:/var/lib/grafana/dashboards:ro
     depends_on:
       - prometheus
     restart: unless-stopped
