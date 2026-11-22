@@ -36,3 +36,8 @@ crash.log
 crash.*.log
 *.tfvars
 *.tfvars.json
+
+# Playwright
+/test-results/
+/playwright-report/
+/playwright/.cache/
