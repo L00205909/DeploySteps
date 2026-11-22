@@ -28,13 +28,13 @@ resource "aws_instance" "web" {
   associate_public_ip_address = true
   iam_instance_profile        = aws_iam_instance_profile.ec2_profile.name
 
+
   user_data = <<-EOF
   #!/bin/bash
-  set -e
+  set -Eeuo pipefail
 
   # Install required packages
-  dnf update -y
-  dnf install -y docker git curl
+  dnf install -y docker git
 
   # Start Docker
   systemctl enable --now docker
@@ -58,7 +58,11 @@ resource "aws_instance" "web" {
   docker-compose version
   git --version
   aws --version
+
+  # Verify Docker service
+  systemctl is-active docker
   EOF
+
 
   root_block_device {
     volume_size           = 20
