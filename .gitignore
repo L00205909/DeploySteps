@@ -26,3 +26,13 @@ dist-ssr
 # Generated files
 node_modules/
 dist/
+
+# Terraform
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+*.tfplan
+crash.log
+crash.*.log
+*.tfvars
+*.tfvars.json
