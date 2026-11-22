@@ -78,13 +78,7 @@ resource "aws_iam_role_policy" "github_deployment" {
         Sid    = "ECRLogin"
         Effect = "Allow"
         Action = [
-          "ecr:GetAuthorizationToken",
-          "ecr:BatchCheckLayerAvailability",
-          "ecr:BatchGetImage",
-          "ecr:CompleteLayerUpload",
-          "ecr:InitiateLayerUpload",
-          "ecr:PutImage",
-          "ecr:UploadLayerPart",
+          "ecr:GetAuthorizationToken"
         ]
         Resource = "*"
       },
@@ -93,6 +87,7 @@ resource "aws_iam_role_policy" "github_deployment" {
         Effect = "Allow"
         Action = [
           "ecr:BatchCheckLayerAvailability",
+          "ecr:BatchGetImage",
           "ecr:InitiateLayerUpload",
           "ecr:UploadLayerPart",
           "ecr:CompleteLayerUpload",
