@@ -77,36 +77,35 @@ document.querySelector('#app').innerHTML = `
             <span class="prompt">$</span> git push origin main
           </div>
           <div class="terminal-line">
-            <span class="check">✓</span>
-            <span>Source code received</span>
-            <span class="line-time">00:01</span>
-          </div>
-          <div class="terminal-line">
-            <span class="check">✓</span>
-            <span>Lint &amp; automated tests</span>
-            <span class="line-time">00:08</span>
-          </div>
-          <div class="terminal-line">
-            <span class="check">✓</span>
-            <span>Security scan</span>
-            <span class="line-time">00:12</span>
-          </div>
-          <div class="terminal-line">
-            <span class="check">✓</span>
-            <span>Docker image build</span>
-            <span class="line-time">00:18</span>
-          </div>
-          <div class="terminal-line pending">
-            <span class="pending-icon">◷</span>
-            <span>Cloud deployment</span>
-            <span class="line-time">NEXT</span>
-          </div>
+  <span class="check">✓</span>
+  <span>Source control — GitHub</span>
+</div>
+<div class="terminal-line">
+  <span class="check">✓</span>
+  <span>Automated tests &amp; code quality</span>
+</div>
+<div class="terminal-line">
+  <span class="check">✓</span>
+  <span>Security scanning — npm audit &amp; Trivy</span>
+</div>
+<div class="terminal-line">
+  <span class="check">✓</span>
+  <span>Docker build &amp; ECR image push</span>
+</div>
+<div class="terminal-line">
+  <span class="check">✓</span>
+  <span>AWS EC2 deployment via SSM</span>
+</div>
+<div class="terminal-line">
+  <span class="check">✓</span>
+  <span>Prometheus &amp; Grafana monitoring</span>
+</div>
 
-          <div class="terminal-result">
-            <span class="result-indicator"></span>
-            PIPELINE AUTOMATION
-            <strong>IN PROGRESS</strong>
-          </div>
+<div class="terminal-result">
+  <span class="result-indicator"></span>
+  DEPLOYSTEPS DELIVERY
+  <strong>PIPELINE CONFIGURED</strong>
+</div>
         </div>
       </div>
     </section>
@@ -177,52 +176,75 @@ document.querySelector('#app').innerHTML = `
     </section>
 
     <section class="pipeline-section" id="pipeline">
-      <div class="section-heading">
-        <span class="section-label">THE WORKFLOW</span>
-        <h2>One pipeline. Every step connected.</h2>
-        <p>
-          From the first commit to a running application,
-          each stage contributes to a repeatable delivery process.
-        </p>
-      </div>
+  <div class="section-heading">
+    <span class="section-label">CI/CD WORKFLOW</span>
+    <h2>From commit to cloud deployment.</h2>
+    <p>
+      Every code change passes through automated quality checks,
+      security scanning and container deployment before reaching AWS.
+    </p>
+  </div>
 
-      <div class="pipeline-flow">
-        <div class="pipeline-step">
-          <span class="step-number">01</span>
-          <span class="step-icon">⌘</span>
-          <strong>Code</strong>
-          <small>GitHub</small>
-        </div>
-        <span class="flow-arrow">→</span>
-        <div class="pipeline-step">
-          <span class="step-number">02</span>
-          <span class="step-icon">✓</span>
-          <strong>Test</strong>
-          <small>CI workflow</small>
-        </div>
-        <span class="flow-arrow">→</span>
-        <div class="pipeline-step">
-          <span class="step-number">03</span>
-          <span class="step-icon">▣</span>
-          <strong>Build</strong>
-          <small>Docker</small>
-        </div>
-        <span class="flow-arrow">→</span>
-        <div class="pipeline-step">
-          <span class="step-number">04</span>
-          <span class="step-icon">☁</span>
-          <strong>Deploy</strong>
-          <small>AWS</small>
-        </div>
-        <span class="flow-arrow">→</span>
-        <div class="pipeline-step">
-          <span class="step-number">05</span>
-          <span class="step-icon">◉</span>
-          <strong>Monitor</strong>
-          <small>Grafana</small>
-        </div>
-      </div>
-    </section>
+  <div class="pipeline-flow">
+    <article class="pipeline-step">
+      <span class="step-number">01</span>
+      <span class="step-icon">⌘</span>
+      <strong>Source Control</strong>
+      <small>GitHub Repository</small>
+      <span class="step-detail">Version control &amp; collaboration</span>
+    </article>
+
+    <span class="flow-arrow">→</span>
+
+    <article class="pipeline-step">
+      <span class="step-number">02</span>
+      <span class="step-icon">✓</span>
+      <strong>Build &amp; Test</strong>
+      <small>GitHub Actions</small>
+      <span class="step-detail">ESLint · Vitest · Vite</span>
+    </article>
+
+    <span class="flow-arrow">→</span>
+
+    <article class="pipeline-step">
+      <span class="step-number">03</span>
+      <span class="step-icon">⌕</span>
+      <strong>Security Scan</strong>
+      <small>npm audit · Trivy</small>
+      <span class="step-detail">Dependency &amp; image scanning</span>
+    </article>
+
+    <span class="flow-arrow">→</span>
+
+    <article class="pipeline-step">
+      <span class="step-number">04</span>
+      <span class="step-icon">▣</span>
+      <strong>Containerisation</strong>
+      <small>Docker · Amazon ECR</small>
+      <span class="step-detail">Build &amp; push image</span>
+    </article>
+
+    <span class="flow-arrow">→</span>
+
+    <article class="pipeline-step">
+      <span class="step-number">05</span>
+      <span class="step-icon">☁</span>
+      <strong>Cloud Deployment</strong>
+      <small>AWS EC2 · SSM</small>
+      <span class="step-detail">Automated application deployment</span>
+    </article>
+
+    <span class="flow-arrow">→</span>
+
+    <article class="pipeline-step">
+      <span class="step-number">06</span>
+      <span class="step-icon">◉</span>
+      <strong>Monitoring</strong>
+      <small>Prometheus · Grafana</small>
+      <span class="step-detail">Metrics &amp; observability</span>
+    </article>
+  </div>
+</section>
 
     <section class="closing-section">
       <span class="section-label">THE PROJECT</span>
