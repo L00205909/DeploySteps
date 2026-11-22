@@ -1,0 +1,30 @@
+
+groups:
+  - name: deploysteps-alerts
+    rules:
+      - alert: WebsiteDown
+        expr: nginx_up == 0
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "DeploySteps website is down"
+          description: "Nginx is not responding to health checks."
+
+      - alert: NginxExporterDown
+        expr: up{job="nginx"} == 0
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Nginx Exporter is unavailable"
+          description: "Prometheus cannot scrape the Nginx Exporter."
+
+      - alert: HighConnections
+        expr: nginx_connections_active > 100
+        for: 2m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High number of active Nginx connections"
+          description: "Active Nginx connections have exceeded 100 for 2 minutes."
