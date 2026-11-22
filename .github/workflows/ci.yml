@@ -50,7 +50,7 @@ jobs:
         with:
           image-ref: deploysteps:${{ github.sha }}
           format: table
-          severity: CRITICAL
+          severity: HIGH,CRITICAL
           exit-code: '1'
 
       # AWS deployment - main branch only
