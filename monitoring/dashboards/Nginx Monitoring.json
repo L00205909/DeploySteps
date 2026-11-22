@@ -62,7 +62,7 @@
                       "group": "prometheus",
                       "version": "v0",
                       "datasource": {
-                        "name": "eg4s61amfgdmoc"
+                        "name": "deploysteps-prometheus"
                       },
                       "spec": {
                         "editorMode": "builder",
@@ -176,7 +176,7 @@
                       "group": "prometheus",
                       "version": "v0",
                       "datasource": {
-                        "name": "eg4s61amfgdmoc"
+                        "name": "deploysteps-prometheus"
                       },
                       "spec": {
                         "editorMode": "code",
