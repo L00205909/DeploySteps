@@ -85,3 +85,4 @@ docker compose ps
 docker compose logs
 docker compose down
 ```
+Demo pipeline execution
